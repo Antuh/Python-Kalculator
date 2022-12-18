@@ -4,8 +4,16 @@ while True:
     s = input("Операция (+,-,*,/,^,%,корень) ")
     if s == "q": break
     if s in ("+","-","*","/","^","%","корень"):
-        x = float(input("x="))
-        y = float(input("y="))
+        try:
+            x = float(input("x="))
+        except ValueError:
+            print("Введите корректно данные!")
+            x = float(input("x="))
+        try:
+            y = float(input("y="))
+        except ValueError:
+            print("Введите корректно данные!")
+            y = float(input("y="))
         if s == "+":
             print("%.2f" % (x+y))
         elif s == "-":
